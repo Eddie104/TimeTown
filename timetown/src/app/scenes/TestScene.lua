@@ -1,6 +1,8 @@
 local Label = require("libra.ui.components.JLabel")
 local Button = require("libra.ui.components.JButton")
 
+local AStar = require("libra.aStar.AStar")
+
 local TestScene = class("TestScene", function()
     return display.newScene("TestScene")
 end)
@@ -29,6 +31,15 @@ function TestScene:ctor()
     --         print("move completed")
     --     end,
     -- })
+
+    local map = {
+        {0,1,0,1,0},
+        {0,1,0,1,0},
+        {0,1,1,1,0},
+        {0,0,0,0,0},
+    }
+    self._astar = AStar.new(map, 0)
+    self._astar:find(1, 1, 5, 1)
 end
 
 function TestScene:onEnter()
