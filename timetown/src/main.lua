@@ -13,3 +13,9 @@ require("config")
 require("cocos.init")
 require("framework.init")
 require("init")
+
+
+
+--[[
+android key store 密码 hongjie104 别名 key36 别名密码 hongjie104
+]]

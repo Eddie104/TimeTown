@@ -1,0 +1,941 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"disnewsr",
+				"display.newSprite(filename, x, y, params)\t."
+			],
+			[
+				"disw",
+				"display.width\t."
+			],
+			[
+				"disbla",
+				"display.COLOR_BLACK\t."
+			],
+			[
+				"if",
+				"ifmain\tif __name__ == '__main__'"
+			],
+			[
+				"fn",
+				"function"
+			],
+			[
+				"new",
+				"newID"
+			],
+			[
+				"star",
+				"startItems"
+			],
+			[
+				"resu",
+				"results"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/libra/ui/components/JLabel.lua",
+			"settings":
+			{
+				"buffer_size": 2261,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/libra/ui/components/JScrollView.lua",
+			"settings":
+			{
+				"buffer_size": 11906,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/libra/ui/components/JListView.lua",
+			"settings":
+			{
+				"buffer_size": 13288,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/scenes/TestScene.lua",
+			"settings":
+			{
+				"buffer_size": 2590,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 138 files for \"ccui\"\n\n/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/app/scenes/TestScene.lua:\n   32      }\n   33  \n   34:     local scrollView = ccui.ScrollView:create()\n   35      scrollView:addTo(self)\n   36      scrollView:align(display.TOP_CENTER, display.cx, display.top)\n   ..\n   39      local btnSize = nil\n   40      for i = #tests, 1, -1 do\n   41:         local btn = ccui.Button:create()\n   42          btn:setTitleText(tests[i])\n   43          btn:setTitleFontSize(24)\n\n/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/cocos/ui/GuiConstants.lua:\n    1  \n    2: ccui = ccui or {}\n    3  \n    4: ccui.BrightStyle =\n    5  {\n    6      none = -1,\n    .\n    9  }\n   10  \n   11: ccui.TextureResType =\n   12  {\n   13      localType = 0,\n   ..\n   15  }\n   16  \n   17: ccui.TouchEventType =\n   18  {\n   19      began = 0,\n   ..\n   23  }\n   24  \n   25: ccui.SizeType =\n   26  {\n   27      absolute = 0,\n   ..\n   29  }\n   30  \n   31: ccui.PositionType = {\n   32      absolute = 0,\n   33      percent = 1,\n   34  }\n   35  \n   36: ccui.CheckBoxEventType =\n   37  {\n   38      selected = 0,\n   ..\n   40  }\n   41  \n   42: ccui.TextFiledEventType =\n   43  {\n   44      attach_with_ime = 0,\n   ..\n   48  }\n   49  \n   50: ccui.LayoutBackGroundColorType =\n   51  {\n   52      none = 0,\n   ..\n   55  }\n   56  \n   57: ccui.LayoutType =\n   58  {\n   59      ABSOLUTE = 0,\n   ..\n   63  }\n   64  \n   65: ccui.LayoutParameterType =\n   66  {\n   67      none = 0,\n   ..\n   70  }\n   71  \n   72: ccui.LinearGravity =\n   73  {\n   74      none = 0,\n   ..\n   81  }\n   82  \n   83: ccui.RelativeAlign =\n   84  {\n   85      alignNone = 0,\n   ..\n  107  }\n  108  \n  109: ccui.SliderEventType = {percentChanged = 0}\n  110  \n  111: ccui.LoadingBarDirection = { LEFT = 0, RIGHT = 1}\n  112  \n  113: ccui.ScrollViewDir = {\n  114      none = 0,\n  115      vertical = 1,\n  ...\n  118  }\n  119  \n  120: ccui.ScrollViewMoveDir = {\n  121      none = 0,\n  122      up = 1,\n  ...\n  126  }\n  127  \n  128: ccui.ScrollviewEventType = {\n  129      scrollToTop =  0,\n  130      scrollToBottom =  1,\n  ...\n  138  }\n  139  \n  140: ccui.ListViewDirection = {\n  141      none = 0,\n  142      vertical = 1,\n  ...\n  144  }\n  145  \n  146: ccui.ListViewMoveDirection = {\n  147      none = 0,\n  148      up = 1,\n  ...\n  152  }\n  153  \n  154: ccui.ListViewEventType = {\n  155      ONSELECTEDITEM_START = 0,\n  156      ONSELECTEDITEM_END   = 1,\n  157  }\n  158  \n  159: ccui.PageViewEventType = {\n  160     turning = 0,\n  161  }\n  162  \n  163: ccui.PVTouchDir = {\n  164      touchLeft = 0,\n  165      touchRight = 1,\n  166  }\n  167  \n  168: ccui.ListViewGravity = {\n  169      left = 0,\n  170      right = 1,\n  ...\n  175  }\n  176  \n  177: ccui.TextType = {\n  178      SYSTEM = 0,\n  179      TTF    = 1,\n\n/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/framework/display.lua:\n  664  -- @param integer y\n  665  -- @param table size\n  666: -- @return Scale9Sprite#Scale9Sprite ret (return value: ccui.Scale9Sprite) Sprite9Scale显示对象\n  667  \n  668  \n  ...\n  688  \n  689  function display.newScale9Sprite(filename, x, y, size, capInsets)\n  690:     local scale9sp = ccui.Scale9Sprite or cc.Scale9Sprite\n  691      return display.newSprite(filename, x, y, {class = scale9sp, size = size, capInsets = capInsets})\n  692  end\n\n/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/framework/WidgetEx.lua:\n    1  --[[--\n    2  \n    3: 针对 ccui.Widget 的扩展\n    4  \n    5  ]]\n    6  \n    7: local Widget = ccui.Widget\n    8  \n    9  --[[\n   10: wapper ccui.Widget:setTouchEnabled to make it support Node:addNodeEventListener(cc.NODE_TOUCH_EVENT)\n   11: Normally, ccui.Widget have it own touch dealing in cpp code.\n   12  This wapper help you have chance to deal touch in lua code.\n   13  ]]--\n\n/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/ui/components/JLoadingBar.lua:\n   26  \tif param.scale9 then\n   27  \t\tself._isScale9 = true\n   28: \t\tlocal scale9sp = ccui.Scale9Sprite or cc.Scale9Sprite\n   29  \t\tif string.byte(param.image) == 35 then\n   30  \t\t\tself._bar = scale9sp:createWithSpriteFrameName(string.sub(param.image, 2), param.capInsets)\n\n/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/ui/components/JTextField.lua:\n  103  \tlocal editboxCls\n  104  \tif cc.bPlugin_ then\n  105: \t\teditboxCls = ccui.EditBox\n  106  \telse\n  107  \t\teditboxCls = cc.EditBox\n  ...\n  168  \tlocal textfieldCls\n  169  \tif cc.bPlugin_ then\n  170: \t\ttextfieldCls = ccui.TextField\n  171  \telse\n  172  \t\ttextfieldCls = cc.TextField\n\n37 matches across 6 files\n",
+			"settings":
+			{
+				"buffer_size": 4530,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "src/cocos/ui/GuiConstants.lua",
+			"settings":
+			{
+				"buffer_size": 2802,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/cocos/init.lua",
+			"settings":
+			{
+				"buffer_size": 392,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/libra/ui/components/JListViewItem.lua",
+			"settings":
+			{
+				"buffer_size": 688,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/libra/ui/init.lua",
+			"settings":
+			{
+				"buffer_size": 4180,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/framework/display.lua",
+			"settings":
+			{
+				"buffer_size": 43827,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 119.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"packainsta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 444.0
+	},
+	"console":
+	{
+		"height": 130.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/app",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/app/scenes",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/cocos",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/cocos/ui",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/framework",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/data",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/data/config",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/data/managers",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/ui",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/ui/components",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/ui/managers",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/utils",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/tools"
+	],
+	"file_history":
+	[
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/aStar/pathfinder.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/data/managers/DataManager.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/ui/managers/UIManager.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/ui/event.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/data/managers/ItemManager.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/data/Object.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/data/Item.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/framework/functions.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/app/scenes/TestScene.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/tools/pack.py",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/tools/encodeRes.py",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/frameworks/runtime-src/Classes/AppDelegate.cpp",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/tools/keyFile.txt",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/main.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/init.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/utils/init.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/init.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/main.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/frameworks/runtime-src/proj.android/libcocos2dx/jni/Application.mk",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/frameworks/runtime-src/proj.android/.idea/workspace.xml",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/framework/display.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/frameworks/runtime-src/proj.android/app/build.gradle",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/frameworks/runtime-src/proj.android/build.gradle",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/frameworks/runtime-src/proj.android/build_native.py",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/ui/components/JLabel.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/frameworks/runtime-src/proj.android/libcocos2dx/build.gradle",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/aStar/core/lookuptable.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/aStar/AStar.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/.gitignore",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/aStar/grid.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/aStar/core/assert.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/aStar/core/bheap.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/aStar/core/heuristics.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/aStar/core/node.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/aStar/core/path.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/aStar/core/utils.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/aStar/search/astar.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/aStar/search/bfs.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/aStar/search/dfs.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/aStar/search/dijkstra.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/aStar/search/jps.lua",
+		"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src/libra/aStar/search/thetastar.lua",
+		"/Users/eddie104/Documents/hongjie/internalUseApp/.gitignore",
+		"/Users/eddie104/Documents/hongjie/StarAdmin/src/config.js",
+		"/Users/eddie104/Documents/hongjie/StarAdmin/src/components/page/account/ItemRecord.vue",
+		"/Users/eddie104/Documents/hongjie/StarAdmin/src/components/page/account/LevelDataList.vue",
+		"/Users/eddie104/Documents/hongjie/StarAdmin/src/components/page/account/UserList.vue",
+		"/Users/eddie104/Documents/hongjie/StarAdmin/src/components/page/account/UserLoginList.vue",
+		"/Users/eddie104/Documents/hongjie/StarAdmin/src/components/page/account/AccountList.vue"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+			"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src",
+			"/Users/eddie104/Documents/hongjie/TimeTown/timetown",
+			"/Users/eddie104/Documents/hongjie/TimeTown/timetown/frameworks",
+			"/Users/eddie104/Documents/hongjie/TimeTown/timetown/src"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ccui",
+			"tests",
+			"EventListener",
+			"NodeEventListener",
+			"addNodeEventListener",
+			"NODE_ENTER_FRAME_EVENT",
+			"onUpdate",
+			"param",
+			"JListView",
+			"ListViewItem",
+			"convertToNodeSpace",
+			"setCascadeOpacityEnabled",
+			"makeUIComponent",
+			"TEXT_ALIGNMENT_LEFT",
+			"alig",
+			"TEXT_ALIGN_LEFT",
+			"__cname",
+			"\t",
+			"  ",
+			"    ",
+			"  ",
+			"    ",
+			"  ",
+			"core.path",
+			"core.node",
+			"bheap",
+			"encodeKey",
+			"decoder",
+			"abcdeabcedab",
+			"decoder",
+			"encodeRes",
+			"encodeSign",
+			"sysstr",
+			"decoder",
+			"tic void decode",
+			"armeabi",
+			"CC_USE_WEBSOCKET",
+			"websocket",
+			"websc",
+			":= 0",
+			"wrapSceneWithTransition",
+			"CROSSFADE",
+			"update",
+			"isRelease",
+			"buildNative",
+			"releas",
+			"clean",
+			"CC_USE_WEBSOCKET",
+			"webso",
+			"TEXTURES_PIXEL_FORMAT",
+			"addSpriteFrames",
+			"spritefr",
+			"newTTFLabel",
+			"= 1",
+			"lookuptable",
+			"Assert",
+			"setWalkable",
+			"walkab",
+			"' ",
+			"'  ",
+			"']",
+			"['",
+			"Finders",
+			"_finder",
+			"finderName",
+			":new",
+			"  ",
+			"    ",
+			"  ",
+			"startX",
+			"getPath",
+			"instance",
+			"inherits",
+			":new",
+			"setGrid",
+			"  ",
+			"jumper",
+			"require"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/libra/ui/components/JLabel.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2261,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1899,
+								1914
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 762.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/libra/ui/components/JScrollView.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11906,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3252,
+								3252
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1460.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/libra/ui/components/JListView.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13288,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								303,
+								312
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/app/scenes/TestScene.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2590,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1266,
+								1270
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 318.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4530,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										165,
+										169
+									],
+									[
+										397,
+										401
+									],
+									[
+										599,
+										603
+									],
+									[
+										606,
+										610
+									],
+									[
+										632,
+										636
+									],
+									[
+										712,
+										716
+									],
+									[
+										799,
+										803
+									],
+									[
+										882,
+										886
+									],
+									[
+										962,
+										966
+									],
+									[
+										1057,
+										1061
+									],
+									[
+										1146,
+										1150
+									],
+									[
+										1243,
+										1247
+									],
+									[
+										1336,
+										1340
+									],
+									[
+										1418,
+										1422
+									],
+									[
+										1505,
+										1509
+									],
+									[
+										1586,
+										1590
+									],
+									[
+										1672,
+										1676
+									],
+									[
+										1731,
+										1735
+									],
+									[
+										1796,
+										1800
+									],
+									[
+										1895,
+										1899
+									],
+									[
+										1992,
+										1996
+									],
+									[
+										2112,
+										2116
+									],
+									[
+										2215,
+										2219
+									],
+									[
+										2316,
+										2320
+									],
+									[
+										2441,
+										2445
+									],
+									[
+										2515,
+										2519
+									],
+									[
+										2612,
+										2616
+									],
+									[
+										2710,
+										2714
+									],
+									[
+										2972,
+										2976
+									],
+									[
+										3139,
+										3143
+									],
+									[
+										3408,
+										3412
+									],
+									[
+										3472,
+										3476
+									],
+									[
+										3518,
+										3522
+									],
+									[
+										3629,
+										3633
+									],
+									[
+										3939,
+										3943
+									],
+									[
+										4294,
+										4298
+									],
+									[
+										4438,
+										4442
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								609,
+								609
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/cocos/ui/GuiConstants.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2802,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								227,
+								227
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/cocos/init.lua",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 392,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								392,
+								392
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/libra/ui/components/JListViewItem.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 688,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								271,
+								286
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/libra/ui/init.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4180,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3652,
+								3666
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/framework/display.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 43827,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								31841,
+								31841
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 17071.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "TimeTown.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"testsc",
+				"src/app/scenes/TestScene.lua"
+			],
+			[
+				"funct",
+				"src/framework/functions.lua"
+			],
+			[
+				"app",
+				"frameworks/runtime-src/proj.android/libcocos2dx/jni/Application.mk"
+			],
+			[
+				"jlab",
+				"src/libra/ui/components/JLabel.lua"
+			],
+			[
+				"applicai",
+				"frameworks/runtime-src/proj.android/libcocos2dx/jni/Application.mk"
+			],
+			[
+				"displa",
+				"src/framework/display.lua"
+			],
+			[
+				"displ",
+				"src/framework/display.lua"
+			],
+			[
+				"config",
+				"src/config.js"
+			],
+			[
+				"api",
+				"src/api.js"
+			],
+			[
+				"searchpage",
+				"app/pages/home/search/SearchPage.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 246.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

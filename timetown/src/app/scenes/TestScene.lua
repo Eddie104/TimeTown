@@ -1,5 +1,5 @@
-local Label = require("libra.ui.components.JLabel")
-local Button = require("libra.ui.components.JButton")
+-- local Label = require("libra.ui.components.JLabel")
+-- local Button = require("libra.ui.components.JButton")
 
 local AStar = require("libra.aStar.AStar")
 
@@ -8,15 +8,12 @@ local TestScene = class("TestScene", function()
 end)
 
 function TestScene:ctor()
-    -- local test = {
-    --     {id = "_testBtn", ui = "libra.ui.components.JButton", param = {normal = "ui/ty_anniu02.png", label = {text = "123", size = 24}}, x = display.cx, y = display.cy},
-    --     {id = "_testBtn1", ui = "libra.ui.components.JButton", param = {normal = "ui/ty_anniu02.png", label = {text = "hello world", size = 24}}, x = display.cx, y = display.cy + 50}
-    -- }
-    -- uiManager:getUIContainer():createUI(test)
-    
+    -- display.newColorLayer(cc.c4b(255, 0, 0, 255)):size(display.width, display.height):addTo(self)
+    --[[
+    display.newSprite('logo@2x.png', display.cx, display.cy):addTo(self)
     local t = display.newTTFLabel({
         text = "Hello, World",
-        font = "Marker Felt",
+        -- font = "Marker Felt",
         size = 64,
         -- x = display.cx,
         -- y = display.cy,
@@ -24,22 +21,110 @@ function TestScene:ctor()
     }):addTo(self)
 
     transition.moveTo(t, {x = display.cx, y = display.cy, time = 1.5})
-    -- transition.execute(t, MoveTo:create(1.5, cc.p(display.cx, display.cy)), {
-    --     delay = 1.0,
-    --     easing = "backout",
-    --     onComplete = function()
-    --         print("move completed")
-    --     end,
-    -- })
 
-    local map = {
-        {0,1,0,1,0},
-        {0,1,0,1,0},
-        {0,1,1,1,0},
-        {0,0,0,0,0},
+    local tests = {
+        "Test_NodeFrameEvent",
+        "Test_NodeEvent",
+        "Test_KeypadEvent",
+        "Test_NodeTouchEvent",
+        "Test_AccelerometerEvent",
+        "Test_CocosStudio",
+        "Test_Audio",
     }
-    self._astar = AStar.new(map, 0)
-    self._astar:find(1, 1, 5, 1)
+
+    local scrollView = ccui.ScrollView:create()
+    scrollView:addTo(self)
+    scrollView:align(display.TOP_CENTER, display.cx, display.top)
+    self._scrollView = scrollView
+    local total = 0
+    local btnSize = nil
+    for i = #tests, 1, -1 do
+        local btn = ccui.Button:create()
+        btn:setTitleText(tests[i])
+        btn:setTitleFontSize(24)
+        btn:addTouchEventListener(function(sender, eventType)
+            if 2 == eventType then
+                scrollView:setVisible(false)
+                app:createView(tests[i]):addTo(self)
+            end
+        end)
+        if not btnSize then
+            btnSize = btn:getContentSize()
+        end
+        btn:pos((display.width - btnSize.width) / 2 + btnSize.width / 2,
+                btnSize.height * total + btnSize.height / 2)
+        total = total + 1
+
+        scrollView:addChild(btn)
+    end
+    local totalHeight = btnSize.height * total
+    scrollView:setInnerContainerSize(cc.size(display.width, totalHeight))
+    local scrollHeight = display.height
+    if totalHeight < scrollHeight then
+        scrollHeight = totalHeight
+    end
+    scrollView:setContentSize(cc.size(display.width, scrollHeight))
+
+    -- local map = {
+    --     {0,1,0,1,0},
+    --     {0,1,0,1,0},
+    --     {0,1,1,1,0},
+    --     {0,0,0,0,0},
+    -- }
+    -- self._astar = AStar.new(map, 0)
+    -- self._astar:find(1, 1, 5, 1)
+    ]]
+
+    -- self:testButton()
+    -- self:testCheckBox()
+    -- self:testImageView()
+    -- self:testText()
+    self:testLoadingBar()
+end
+
+function TestScene:testButton()
+    self._ttt = '123'
+    local Button = require('libra.ccui.Button')
+    local btn = Button.new('logo@2x.png'):addTo(self):pos(display.cx, display.cy)
+    btn:title('aa', display.COLOR_RED, 48)
+    btn:onTap(function ()
+        print(self._ttt)
+    end)
+end
+
+function TestScene:testCheckBox()
+    self._ttt = '123'
+    local CheckBox = require('libra.ccui.CheckBox')
+    local checkBox = CheckBox.new('btn_normal.png', 'btn_down.png', 'closeBtn_normal.png'):addTo(self):pos(display.cx, display.cy)
+    checkBox:selected(true)
+    checkBox:onChange(function (val)
+        print(tostring(val) .. self._ttt)
+    end)
+end
+
+function TestScene:testImageView()
+    local imageView = require('libra.ccui.ImageView').new('btn_normal.png')
+    imageView:addTo(self):pos(display.cx, display.cy)
+    imageView:textureRect(cc.rect(0, 0, 10, 10))
+end
+
+function TestScene:testText()
+    display.newRect(cc.rect(0, 0, 640, 200), {borderColor = cc.c4f(1, 0, 0, 1)}):addTo(self):pos(display.cx - 640 / 2, display.cy - 200 /2)
+    local text = require('libra.ccui.Text').new('test')
+    print(text:getType())
+    text:size(cc.size(640, 200))
+    text:color(display.COLOR_BLUE)
+    dump(text:getContentSize())
+    text:addTo(self):pos(display.cx, display.cy)
+    text:enableOutline(cc.c4b(255, 255, 255, 255), 100)
+    -- text:enableGlow(cc.c4b(255, 0, 0, 255))
+    -- text:enableShadow(cc.c4b(255, 0, 0, 150), cc.size(20,-2))
+end
+
+function TestScene:testLoadingBar()
+    local bar = require('libra.ccui.LoadingBar').new('logo@2x.png', 50)
+    bar:addTo(self):pos(display.cx, display.cy)
+    -- bar:direction(4)
 end
 
 function TestScene:onEnter()

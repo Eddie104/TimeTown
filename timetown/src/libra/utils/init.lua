@@ -10,7 +10,7 @@ import(".lang")
 import(".transition")
 import(".richText")
 
-transition = import("./transition")
+transition = import(".transition")
 
 local scheduler = require("framework.scheduler")
 
