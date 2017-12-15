@@ -82,7 +82,9 @@ function TestScene:ctor()
     -- self:testLoadingBar()
     -- self:testScrollView()
     -- self:testListView()
-    self:testTextField()
+    -- self:testTextField()
+
+    self:testRole()
 end
 
 function TestScene:testButton()
@@ -160,6 +162,13 @@ function TestScene:testTextField()
     local tf = require('libra.ccui.TextField').new('', display.COLOR_RED, 'lalala')
     tf:passwordEnabled(true)
     tf:addTo(self):pos(display.cx, display.cy)
+end
+
+function TestScene:testRole()
+    self._ttt = '123'
+    display.addSpriteFrames('role/test.plist', 'role/test.png')
+    local role = require('app.view.role.TestRole').new()
+    role:addTo(self):pos(display.cx, display.cy)
 end
 
 function TestScene:onEnter()
