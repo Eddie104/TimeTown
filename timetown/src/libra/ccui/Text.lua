@@ -5,12 +5,12 @@
 
 --[[
 还有以下方法
-getStringLength
-enableShadow => const Color4B& shadowColor,const Size &offset, int blurRadius
-disableEffect
-enableOutline => const Color4B& outlineColor,int outlineSize
-enableGlow => const Color4B& glowColor
-getType => ccui.TextType = {
+getStringLength()
+enableShadow(shadowColor: cc.c4b, offset: cc.size, blurRadius: int)
+disableEffect()
+enableOutline(outlineColor: cc.c4b, outlineSize: int)
+enableGlow(glowColor: cc.c4b)
+getType() => ccui.TextType = {
     SYSTEM = 0,
     TTF    = 1,
 }
@@ -18,7 +18,6 @@ getType => ccui.TextType = {
 
 --[[
 	align 和 valign 参数可用的值：
-
 -    cc.TEXT_ALIGNMENT_LEFT 左对齐
 -    cc.TEXT_ALIGNMENT_CENTER 水平居中对齐
 -    cc.TEXT_ALIGNMENT_RIGHT 右对齐

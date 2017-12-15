@@ -79,7 +79,10 @@ function TestScene:ctor()
     -- self:testCheckBox()
     -- self:testImageView()
     -- self:testText()
-    self:testLoadingBar()
+    -- self:testLoadingBar()
+    -- self:testScrollView()
+    -- self:testListView()
+    self:testTextField()
 end
 
 function TestScene:testButton()
@@ -125,6 +128,38 @@ function TestScene:testLoadingBar()
     local bar = require('libra.ccui.LoadingBar').new('logo@2x.png', 50)
     bar:addTo(self):pos(display.cx, display.cy)
     -- bar:direction(4)
+end
+
+function TestScene:testScrollView()
+    local scrollView = require('libra.ccui.ScrollView').new(cc.size(300, 300), cc.size(400, 400))
+    scrollView:align(display.BOTTOM_LEFT)
+    scrollView:addChild(display.newSprite('timg.jpg'))
+    scrollView:direction(3):bounceEnabled(true)
+    scrollView:addTo(self)
+
+    -- display.newSprite('timg.jpg', display.cx, display.cy):addTo(self)
+end
+
+function TestScene:testListView()
+    display.newRect(cc.rect(0, 0, 300, 300), {borderColor = cc.c4f(1, 0, 0, 1)}):addTo(self)
+    local listView = require('libra.ccui.ListView').new(cc.size(300, 300))
+    local Button = require('libra.ccui.Button')
+    local btn = Button.new('btn_normal.png', 'btn_down.png')
+    listView:setItemModel(btn)
+    for i = 1, 10 do
+        listView:pushBackDefaultItem()
+    end
+    listView:bounceEnabled(true)
+    listView:onTap(function (idx)
+        print(idx)
+    end)
+    listView:addTo(self)
+end
+
+function TestScene:testTextField()
+    local tf = require('libra.ccui.TextField').new('', display.COLOR_RED, 'lalala')
+    tf:passwordEnabled(true)
+    tf:addTo(self):pos(display.cx, display.cy)
 end
 
 function TestScene:onEnter()

@@ -3,6 +3,11 @@
 -- Date: 2017-12-14 13:19:57
 --
 
+--[[
+还有的方法：
+setTitleOffset(x, y)
+setPressedActionEnabled(bool)
+]]
 local Button = class("Button", function ()
 	return ccui.Button:create()
 end)
