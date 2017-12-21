@@ -7,6 +7,8 @@ import(".cc.init")
 -- import(".ui.init")
 import(".utils.init")
 import(".log4q.init")
+import('.terminal.init')
+import('.net.http.init')
 
 if device.platform == "android" then
 	import(".platform.android")
@@ -20,10 +22,6 @@ end
 -- 		import(".luaUpdate.init")
 -- 	end
 -- end
-
-if LUA_UI_EDITOR then
-	import(".uiEditor.init")
-end
 
 -- 扩展一下Node
 local Node = cc.Node

@@ -55,7 +55,7 @@ function Text:ctor(string, fontSize, hAlign, vAlign)
 	end
 
 	self:setString(string)
-	self:fontSize(display.DEFAULT_TTF_FONT_SIZE)
+	self:fontSize(fontSize or display.DEFAULT_TTF_FONT_SIZE)
 	self:fontName(display.DEFAULT_TTF_FONT)
 end
 

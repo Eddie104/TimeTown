@@ -26,8 +26,6 @@ CONFIG_SCREEN_AUTOSCALE = "FIXED_WIDTH"
 
 LUA_UPDATE = false
 
-LUA_UI_EDITOR = false
-
 DATA_CONFIG_PACKAGE = "app.config."
 
 -- UI_MANAGER_PATH = "app.view.UIManager"

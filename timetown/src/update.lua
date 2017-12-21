@@ -336,28 +336,23 @@ function UpdateScene:onFileDownLoaded()
 								if device.platform == "windows" or device.platform == "mac" then
 									self:doUpdate()
 								else
-									if IS_TV then
-										-- TV版不用检查网络状态
+									local netStatus = network.getInternetConnectionStatus()
+									if netStatus == kCCNetworkStatusNotReachable then
+										-- local alert = self:showAlert("网络不可用", function ()
+										--	 self:doUpdate()
+										-- end, function ()
+										--	 self:endProcess()
+										-- end)
+										-- self:addChild(alert)
+										print("网络不可用")
+									elseif netStatus == kCCNetworkStatusReachableViaWWAN then
+										-- local alert = self:showAlert("3G网络,确定要更新嘛?", function ()
+										--	 self:doUpdate()
+										-- end)
+										-- self:addChild(alert)
 										self:doUpdate()
 									else
-										local netStatus = network.getInternetConnectionStatus()
-										if netStatus == kCCNetworkStatusNotReachable then
-											-- local alert = self:showAlert("网络不可用", function ()
-											--	 self:doUpdate()
-											-- end, function ()
-											--	 self:endProcess()
-											-- end)
-											-- self:addChild(alert)
-											print("网络不可用")
-										elseif netStatus == kCCNetworkStatusReachableViaWWAN then
-											-- local alert = self:showAlert("3G网络,确定要更新嘛?", function ()
-											--	 self:doUpdate()
-											-- end)
-											-- self:addChild(alert)
-											self:doUpdate()
-										else
-											self:doUpdate()
-										end
+										self:doUpdate()
 									end
 								end
 							else

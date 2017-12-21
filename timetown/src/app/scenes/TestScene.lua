@@ -85,6 +85,10 @@ function TestScene:ctor()
     -- self:testTextField()
 
     self:testRole()
+
+    http.get('http://127.0.0.1:7001', function (result)
+        dump(result)
+    end)
 end
 
 function TestScene:testButton()

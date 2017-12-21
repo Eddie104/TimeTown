@@ -83,23 +83,17 @@ function sceneOnEnter(scene)
 	uiContainer:addTo(scene, 999)
 	]]
 
-	if LUA_UI_EDITOR then
-		import("libra.uiEditor.UIEditorContainer").new():addToContainer()
-	end
-
-	if not IS_TV then
-		if device.platform == "android" then
-			-- avoid unmeant back
-			scene:performWithDelay(function()
-				-- keypad layer, for android
-				local layer = display.newNode()
-				layer:setKeypadEnabled(true)
-				layer:addNodeEventListener(cc.KEYPAD_EVENT, function (event)
-					if event.key == "back" then app.exit() end
-				end)
-				scene:addChild(layer)
-			end, 0.5)
-		end
+	if device.platform == "android" then
+		-- avoid unmeant back
+		scene:performWithDelay(function()
+			-- keypad layer, for android
+			local layer = display.newNode()
+			layer:setKeypadEnabled(true)
+			layer:addNodeEventListener(cc.KEYPAD_EVENT, function (event)
+				if event.key == "back" then app.exit() end
+			end)
+			scene:addChild(layer)
+		end, 0.5)
 	end
 end
 
@@ -126,6 +120,10 @@ function sceneOnEnterTransitionFinish(scene)
 	-- 		uiManager:getTVController():addTo(scene, 1000)
 	-- 	end)
 	-- end
+
+	if terminalIcon then
+		terminalIcon:addTo(scene, 999999)
+	end
 end
 
 function replaceScene(newScene, transitionType, time, more)
