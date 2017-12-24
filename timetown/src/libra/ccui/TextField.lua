@@ -26,9 +26,10 @@ local TextField = class("TextField", function ()
 	return ccui.TextField:create()
 end)
 
-function TextField:ctor(str, strColor, placeHolder)
-	self:setString(str or '')
-	self:setTextColor(strColor or display.COLOR_WHITE)
+function TextField:ctor(placeHolder)
+	-- self:setString(str or '')
+	-- self:setTextColor(strColor or display.COLOR_WHITE)
+	-- self:ignoreContentAdaptWithSize(true)
 	self:setPlaceHolder(placeHolder or '')
 end
 

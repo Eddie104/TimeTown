@@ -4,7 +4,6 @@
 --
 
 function onIconTap()
-	print('aaa')
 	terminal:show()	
 end
 

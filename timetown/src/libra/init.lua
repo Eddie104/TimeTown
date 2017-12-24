@@ -52,6 +52,24 @@ function Node:isPointIn(x, y)
 	return self:getCascadeBoundingBox():containsPoint(cc.p(x, y))
 end
 
+-- local Widget = ccui.Widget
+
+-- function Widget:x(int)
+-- 	if int then
+-- 		self:setPosition(cc.p(int, self:y()))
+-- 		return self
+-- 	end
+-- 	return self:getPositionX()
+-- end
+
+-- function Widget:y(int)
+-- 	if int then
+-- 		self:setPosition(cc.p(self:x(), int))
+-- 		return self
+-- 	end
+-- 	return self:getPositionY()
+-- end
+
 --- 本地热更新启用时
 -- 每次require都必然多出一个类表,它是一个新实例被成员函数当做upvalue引用(所有super调用)
 -- 如果添加了一个函数到类里面，之前创建的旧实例会自动获得到这个函数
