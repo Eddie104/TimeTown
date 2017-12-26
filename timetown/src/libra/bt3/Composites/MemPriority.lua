@@ -10,7 +10,7 @@ end
 
 function MemPriority:onTick(tick)
 	local child = tick.agent:get("runningChild", tick.tree.id, self.id)
-	for i=child, #self.children do
+	for i = child, #self.children do
 		local status = self.children[i]:execute(tick)
 		if status ~= b3.Com.FAILURE then
 			if status == b3.Com.RUNNING then

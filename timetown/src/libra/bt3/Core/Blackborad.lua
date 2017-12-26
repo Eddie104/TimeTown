@@ -65,7 +65,7 @@ function Blackborad:getMemory_(treeScope,nodeScope)
 	if treeScope then
 		memory = self:getTreeMemory_(treeScope)
 		if nodeScope then
-			assert(memory,string.format("treeMemory = %s",tostring(memory)))
+			assert(memory, string.format("treeMemory = %s", tostring(memory)))
 			memory = self:getNodeMemory_(memory, nodeScope)
 		end
 	end
@@ -89,7 +89,7 @@ the global memory.
 ]]
 
 
-function Blackborad:set(key,value,treeScope, nodeScope)
+function Blackborad:set(key, value, treeScope, nodeScope)
 	local memory = self:getMemory_(treeScope, nodeScope)
 	memory[key] = value
 end
@@ -110,7 +110,7 @@ memory.
 @return {Object} The value stored or undefined.
 ]]
 
-function Blackborad:get(key,treeScope,nodeScope)
+function Blackborad:get(key, treeScope, nodeScope)
 	local memory = self:getMemory_(treeScope, nodeScope)
 	return memory[key]
 end

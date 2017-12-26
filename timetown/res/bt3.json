@@ -1,0 +1,78 @@
+{
+  "id": "d0ff8868-1e25-4384-99f2-84160fee1181",
+  "title": "A behavior tree",
+  "description": "",
+  "root": "d168dac4-52f5-4f66-89e5-089a69e6f6f7",
+  "properties": {},
+  "nodes": {
+    "d168dac4-52f5-4f66-89e5-089a69e6f6f7": {
+      "id": "d168dac4-52f5-4f66-89e5-089a69e6f6f7",
+      "name": "Sequence",
+      "title": "的是多少",
+      "description": "的是多少多所",
+      "properties": {},
+      "display": {
+        "x": -276,
+        "y": -228
+      },
+      "children": [
+        "cd559940-2a0c-40ce-8389-1673e97419d3",
+        "3a454f4f-18c9-4c91-8098-5b68ca5dd4c0",
+        "1ad6ccfd-a654-4b42-858c-ede06e7c198e",
+        "50d51c8f-4f2b-47f3-9eec-f828017699c4"
+      ]
+    },
+    "cd559940-2a0c-40ce-8389-1673e97419d3": {
+      "id": "cd559940-2a0c-40ce-8389-1673e97419d3",
+      "name": "Succeeder",
+      "title": "Test1",
+      "description": "just a test",
+      "properties": {},
+      "display": {
+        "x": -108,
+        "y": -360
+      }
+    },
+    "3a454f4f-18c9-4c91-8098-5b68ca5dd4c0": {
+      "id": "3a454f4f-18c9-4c91-8098-5b68ca5dd4c0",
+      "name": "Succeeder",
+      "title": "Succeeder",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -72,
+        "y": -252
+      }
+    },
+    "1ad6ccfd-a654-4b42-858c-ede06e7c198e": {
+      "id": "1ad6ccfd-a654-4b42-858c-ede06e7c198e",
+      "name": "Failer",
+      "title": "Failer",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 0,
+        "y": -24
+      }
+    },
+    "50d51c8f-4f2b-47f3-9eec-f828017699c4": {
+      "id": "50d51c8f-4f2b-47f3-9eec-f828017699c4",
+      "name": "Succeeder",
+      "title": "Succeeder",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -120,
+        "y": 60
+      }
+    }
+  },
+  "display": {
+    "camera_x": 960,
+    "camera_y": 480,
+    "camera_z": 1,
+    "x": -384,
+    "y": -228
+  },
+  "custom_nodes": []
+}

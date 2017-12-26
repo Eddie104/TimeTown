@@ -5,6 +5,7 @@
 local Succeeder = class("Succeeder", b3.Action)
 
 function Succeeder:onTick(tick)
+	print('success')
 	return b3.Com.SUCCESS
 end
 

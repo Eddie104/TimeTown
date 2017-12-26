@@ -22,29 +22,29 @@ node state to the debug if the last is provided.
 
 local Tick = class("Tick")
 
-function Tick:ctor()
+function Tick:ctor(tree, agent)
     --[[
     The tree reference.
     @property {b3.BehaviorTree} tree
     @readOnly
     ]]
-	self.tree = nil
+	self.tree = tree
 	--[[
     The debug reference.
     @property {Object} debug
     @readOnly
     ]]
-    self.debug = nil
+    -- self.debug = nil
     --[[
     The agent object reference. Which include a blackboard
     @property {Object} target
     @readOnly
     ]]
-    self.agent = nil
+    self.agent = agent
     --[[
     
     ]]
-    self.worldBlackboard = nil
+    -- self.worldBlackboard = nil
     --[[
     The list of open nodes. Update during the tree traversal.
 	@property {Array} _openNodes

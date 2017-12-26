@@ -9,6 +9,7 @@ import(".utils.init")
 import(".log4q.init")
 import('.terminal.init')
 import('.net.http.init')
+import('.bt3.init')
 
 if device.platform == "android" then
 	import(".platform.android")

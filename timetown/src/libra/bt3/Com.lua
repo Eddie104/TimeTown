@@ -4,7 +4,7 @@
 --
 local B3Com = {}
 local uuid = import(".uuid")
-assert(uuid,"uuid is nil")
+assert(uuid, "uuid is nil")
 B3Com.Version = '0.1.0'
 
 B3Com.Default_Weight = 10

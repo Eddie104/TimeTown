@@ -2,6 +2,7 @@
 -- local Button = require("libra.ui.components.JButton")
 
 local AStar = require("libra.aStar.AStar")
+local BT = require("libra.bt3.Core.BehaviorTree")
 
 local TestScene = class("TestScene", function()
     return display.newScene("TestScene")
@@ -86,9 +87,17 @@ function TestScene:ctor()
 
     self:testRole()
 
-    http.get('http://127.0.0.1:7001', function (result)
-        dump(result)
-    end)
+    local btJson = 'bt3.json'
+    self:testBT(btJson)
+
+    -- http.get('http://127.0.0.1:7001', function (result)
+    --     dump(result)
+    -- end)
+end
+
+function TestScene:testBT(jsonPath)
+    local bt = BT.new(jsonPath)
+    bt:tick(b3.Tick.new(bt, b3.Blackborad.new()))
 end
 
 function TestScene:testButton()
